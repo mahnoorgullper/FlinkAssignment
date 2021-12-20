@@ -111,14 +111,12 @@ public class Program {
         driver.findElement(By.id("submitButton")).click();
 
         driver.switchTo().defaultContent();
-        try{
+        try {
 //verify success message after payment
-        String text = driver.findElement(By.className("text-justify")).getText();
-        String ExpectedTitle = "Your payment was successful. You should receive a follow-up call from our sales team.";
-        Assert.assertEquals(ExpectedTitle, text);
-
-
-    } catch (Exception e) {
+            String text = driver.findElement(By.className("text-justify")).getText();
+            String ExpectedTitle = "Your payment was successful. You should receive a follow-up call from our sales team.";
+            Assert.assertEquals(ExpectedTitle, text);
+        } catch (Exception e) {
             softAssert.assertNull("assertion failed");
         }
     }
